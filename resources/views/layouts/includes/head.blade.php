@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.72.0">
-    <title>BSFMSTU Online pdf and Book House</title>
+    <title>Course Repository</title>
 
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -23,19 +23,20 @@
         crossorigin="anonymous"></script>
 
     <link href={{asset('style/style.css')}} rel="stylesheet">
+    <link rel="shortcut icon" href={{asset('assets/images/logo.png')}} type="image/x-icon">
     <style>
             a {
-        color: #0d6efd;
-        text-decoration: underline;
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-        font-weight: 600;
+             color: #0d6efd;
+                text-decoration: underline;
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                font-weight: 600;
       }
       
       td.customImageStyle img {
-    width: 47px;
-    height: 18px;
+    width: 75px;
+    height: 100%;
 }
     </style>
 

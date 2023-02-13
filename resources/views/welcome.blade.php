@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legal Solutions</title>
+  <title>Course Repository</title>
   <link rel="shortcut icon" href="./images/time.png" type="image/x-icon">
   <!-- bootstrap css file here -->
   <link rel="stylesheet" href={{asset('assets/styles/bootstrap.min.css')}}>
@@ -19,6 +19,7 @@
   <script src="https://kit.fontawesome.com/919d22bd99.js" crossorigin="anonymous"></script>
   <!-- custom css -->
   <link rel="stylesheet" href={{asset('assets/styles/style.css')}} >
+  <link rel="shortcut icon" href={{asset('assets/images/logo.png')}} type="image/x-icon">
 </head>
 
 <body>
@@ -28,8 +29,8 @@
     <!-- nav section -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
       <div class="container">
-        <a class="navbar-brand p-0 m-0" href="#">
-          <img src={{asset('assets/images/Group2.png')}} alt="">
+        <a class="navbar-brand p-0 m-0 logo" href="#">
+          <img src={{asset('assets/images/logo.png')}} alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,23 +42,17 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">services</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link " aria-current="page" href="#">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cases</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#">Blogs</a>
             </li>
             <li type="button" class="ms-5 btn btn-danger text-white" data-bs-toggle="modal"
               data-bs-target="#exampleModal">
-              Free Consultation
+              Known us about Book
             </li>
           </ul>
 
@@ -71,15 +66,15 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Need Solution?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Need Book?</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            There are many variations of passages of Lorem Ipsum available, but the majority have <br> suffered
+            <h2>Please search the book home page</h2>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- <button type="button" class="btn btn-primary"></button> -->
           </div>
         </div>
       </div>
@@ -91,16 +86,17 @@
           <div class="hero-section py-5">
             <div class="d-flex align-items-center justify-content-center py-5">
               <div class="text-white text-center py-5">
-                <h2 class="h-2 pb-3">We Provide Effective <br> Legal Solutions</h2>
+                <h2 class="h-2 pb-3">Online courses Repository <br>System</h2>
                 <p class="pb-3 fw-normal">There are many variations of passages of Lorem Ipsum available, but the
                   majority
                   <br>have
                   suffered alteration in some form, by injected humour.
                 </p>
-                <form class="d-flex justify-content-center">
-                  <input class="me-2 form-control w-50 fs-6 py-2" type="text" name="" id=""
-                    placeholder="Search your services ">
-                  <input type="submit" value="Search" class="btn btn-danger">
+                <form class="d-flex justify-content-center" method="POST" action={{route('book.search')}}>
+                  @csrf
+                  <input class="me-2 form-control w-50 fs-6 py-2" type="text" name="search" id=""
+                    placeholder="Search your book ">
+                  <input type="submit" value="Search"  class="btn btn-danger">
                 </form>
               </div>
             </div>
@@ -115,7 +111,7 @@
         <div class="row">
           <div class="col-12">
             <div class="text-center mt-5 pb-5">
-              <h2 class="fs-1 fw-bold py-3">The Legal Practice Area</h2>
+              <h2 class="fs-1 fw-bold py-3">The Book Practice Area</h2>
               <p>There are many variations of passages of Lorem Ipsum available, but the majority have <br> suffered
                 alteration
                 in some form, by injected humour.</p>
@@ -124,35 +120,33 @@
         </div>
         <div class="row row-cols-1 row-cols-sm-2  row-cols-md-3 m-0">
           <div class="item  card border  border-1  px-5 pt-3 brn">
-            <img src="./images/Group 12.png" alt="" class="icon-img card-img-top">
+            <img src={{asset('assets/images/Group13.png')}} alt="" class="icon-img card-img-top">
             <div class="card-body text-center">
-              <h5 class="card-title">Business Law</h5>
+              <h5 class="card-title">Business Law Book</h5>
               <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
                 alteration
                 in some form, by injected humour.</p>
-              <img src="./images/Frame.png" alt="">
+              <a target="_blank" href="https://drive.google.com/drive/folders/1itHRjiDgAsKdDfkEOenCEq2f5dhWFzf-?fbclid=IwAR2DUD_ihLP2XBsbdcJ8ObhrPgoBUl7HXCXzp6jpz-ib_K7NNnFSseaNNpM"><img  src={{asset('assets/images/Frame.png')}} alt=""></a>
             </div>
           </div>
           <div class="item brn card border border-1 px-5 pt-3">
-            <img src="./images/Group 13.png" alt="" class="icon-img card-img-top">
+            <img src={{asset('assets/images/Group13.png')}} alt="" class="icon-img card-img-top">
             <div class="card-body text-center">
-              <h5 class="card-title">Education Law</h5>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                alteration
-                in some form, by injected humour.</p>
+              <h5 class="card-title">EEE Book</h5>
+              <p>jggsdgvgdgvgumour.</p>
               
                 
-                <a href="https://www.w3schools.com/tags/att_a_download.asp"><img  src={{asset('assets/images/Frame.png')}} alt=""></a>
+                <a target="_blank" href="https://drive.google.com/drive/folders/1nzJ3Z3AXVYDbOLRO3Xc_JeSuO8LhdVoB?fbclid=IwAR2DUD_ihLP2XBsbdcJ8ObhrPgoBUl7HXCXzp6jpz-ib_K7NNnFSseaNNpM"><img  src={{asset('assets/images/Frame.png')}} alt=""></a>
             </div>
           </div>
           <div class="item card border border-1  px-5 pt-3 brn">
-            <img src="./images/Group 15.png" alt="" class="icon-img card-img-top">
+            <img src={{asset('assets/images/Group13.png')}} alt="" class="icon-img card-img-top">
             <div class="card-body text-center">
-              <h5 class="card-title">Education Law</h5>
+              <h5 class="card-title">CSE Book</h5>
               <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
                 alteration
                 in some form, by injected humour.</p>
-              <img src="./images/Frame.png" alt="">
+                <a target="_blank" href="https://drive.google.com/drive/folders/1Xfl46YGzA0vWGq-IP-5Cu-UbT_h5Ng1A?fbclid=IwAR2DUD_ihLP2XBsbdcJ8ObhrPgoBUl7HXCXzp6jpz-ib_K7NNnFSseaNNpM"><img  src={{asset('assets/images/Frame.png')}} alt=""></a>
             </div>
           </div>
         </div>
@@ -162,15 +156,16 @@
 
     <section class="latest-container container">
             <div class="latest">
-                <h2 class="section-title">Lates Course</h2>
+                <h2 class="section-title">Lates Book</h2>
                 <div class="courses">
+                  @foreach($books as $key=>$book)
                     <div class="course">
                         <div class="course-banner">
-                            <img src={{asset('assets/images/courses/course-1.png')}} alt="" srcset="">
+                        <a target="_blank" href={{$book->gddlink}}  ><img src={{asset('images/product/'.$book->image)}} alt="" srcset=""></a>
                         </div>
                         <div class="course-detail">
-                            <h3 class="course-title">React - The Complete </h3>
-                            <p class="course-author">Reed Krakoff.</p>
+                            <h3 class="course-title">{{$book->name}} </h3>
+                            <p class="course-author">{{$book->author}}</p>
                             <div class="course-info">
                                 <div>
                                     <i class="fa-solid fa-star filled" ></i>
@@ -181,71 +176,26 @@
                                     <span>4.5</span>
                                 </div>
                                 
-                                <div class="course-duration">
+                                <!-- <div class="course-duration">
                                     <i class="fa-regular fa-clock"></i>
                                     <span>01:30hr</span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
-                    <div class="course">
-                        <div class="course-banner">
-                            <img src={{asset('assets/images/courses/course-2.png')}} alt="" srcset="">
-                        </div>
-                        <div class="course-detail">
-                            <h3 class="course-title">React - The Complete </h3>
-                            <p class="course-author">Reed Krakoff.</p>
-                            <div class="course-info">
-                                <div>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star empty"></i>
-                                    <span>4.5</span>
-                                </div>
-                                
-                                <div class="course-duration">
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>01:30hr</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="course">
-                        <div class="course-banner">
-                            <img src={{asset('assets/images/courses/course-3.png')}} alt="" srcset="">
-                        </div>
-                        <div class="course-detail">
-                            <h3 class="course-title">React - The Complete </h3>
-                            <p class="course-author">Reed Krakoff.</p>
-                            <div class="course-info">
-                                <div>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star filled" ></i>
-                                    <i class="fa-solid fa-star empty"></i>
-                                    <span>4.5</span>
-                                </div>
-                                
-                                <div class="course-duration">
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>01:30hr</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  @endforeach  
+
                 </div>
             </div>
         </section>
 
 
-    <!-- our client slider section -->
+    <!-- our team member section -->
+    <!-- Nisat -->
     <div class="container mt-5">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center fw-bold mb-2">What Our Client Say</h2>
+          <h2 class="text-center fw-bold mb-2">Our team member</h2>
           <p class="text-center">There are many variations of passages of Lorem Ipsum available, but the majority have
             <br>
             suffered alteration
@@ -266,10 +216,42 @@
                   aria-label="Slide 3"></button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active py-5">
+                <div class="carousel-item carousel-item-1 active py-5">
                   <div class="d-flex flex-column align-items-center justify-content-center text-white">
-                    <img class="carousel-item-img rounded-circle" src="./images/brain-.jpg" alt="">
-                    <h2>Awlad Hossain</h2>
+                    <img  class="carousel-item-img rounded-circle" src={{asset('assets/images/logo.png')}} alt="">
+                    <h2>Mohammad Ali</h2>
+                    <h3>JavaScript Developer</h3>
+                    <p class="text-center px-5 fs-6">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                      It
+                      has
+                      roots in a piece of
+                      classical Latin <br> literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                      Latin
+                      professor at Hampden-Sydney <br> College in Virginia, looked up one of the more obscure Latin
+                      words,
+                      consectetur.</p>
+                  </div>
+                </div>
+                <div class="carousel-item carousel-item-2 active py-5">
+                  <div class="d-flex flex-column align-items-center justify-content-center text-white">
+                    <img class="carousel-item-img rounded-circle" src={{asset('assets/images/logo.png')}}>
+                    <h2>Md Lanju Mia</h2>
+                    <h3>Web Developer</h3>
+                    <p class="text-center px-5 fs-6">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                      It
+                      has
+                      roots in a piece of
+                      classical Latin <br> literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                      Latin
+                      professor at Hampden-Sydney <br> College in Virginia, looked up one of the more obscure Latin
+                      words,
+                      consectetur.</p>
+                  </div>
+                </div>
+                <div class="carousel-item carousel-item-3 active py-5">
+                  <div class="d-flex flex-column align-items-center justify-content-center text-white">
+                    <img class="carousel-item-img rounded-circle" src={{asset('assets/images/logo.png')}} alt="">
+                    <h2>Wakil Ahmed</h2>
                     <h3>UIX Designer</h3>
                     <p class="text-center px-5 fs-6">Contrary to popular belief, Lorem Ipsum is not simply random text.
                       It
@@ -282,38 +264,7 @@
                       consectetur.</p>
                   </div>
                 </div>
-                <div class="carousel-item active py-5">
-                  <div class="d-flex flex-column align-items-center justify-content-center text-white">
-                    <img class="carousel-item-img rounded-circle" src="./images/brain-.jpg" alt="">
-                    <h2>Awlad Hossain</h2>
-                    <h3>UIX Designer</h3>
-                    <p class="text-center px-5 fs-6">Contrary to popular belief, Lorem Ipsum is not simply random text.
-                      It
-                      has
-                      roots in a piece of
-                      classical Latin <br> literature from 45 BC, making it over 2000 years old. Richard McClintock, a
-                      Latin
-                      professor at Hampden-Sydney <br> College in Virginia, looked up one of the more obscure Latin
-                      words,
-                      consectetur.</p>
-                  </div>
-                </div>
-                <div class="carousel-item active py-5">
-                  <div class="d-flex flex-column align-items-center justify-content-center text-white">
-                    <img class="carousel-item-img rounded-circle" src="./images/brain-.jpg" alt="">
-                    <h2>Awlad Hossain</h2>
-                    <h3>UIX Designer</h3>
-                    <p class="text-center px-5 fs-6">Contrary to popular belief, Lorem Ipsum is not simply random text.
-                      It
-                      has
-                      roots in a piece of
-                      classical Latin <br> literature from 45 BC, making it over 2000 years old. Richard McClintock, a
-                      Latin
-                      professor at Hampden-Sydney <br> College in Virginia, looked up one of the more obscure Latin
-                      words,
-                      consectetur.</p>
-                  </div>
-                </div>
+                
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
@@ -439,10 +390,7 @@
           <div class="col-12 col-md-3">
             <div class="text-white mb-5">
               <img class="pb-3" src="./images/Group 37.png" alt="" srcset="">
-              <p class="">There are many variations of passages of Lorem Ipsum available, but the majority
-                have suffered
-                alteration
-                in some form, by injected humour.</p>
+              <p class="">lkjhhhhggg.</p>
             </div>
           </div>
           <div class="col-12 col-md-3">
@@ -451,7 +399,6 @@
               <ul class="text-white ">
                 <li><a class="text-white" href="">Homes</a></li>
                 <li><a class="text-white" href="">About Us</a></li>
-                <li><a class="text-white" href="">Cases</a></li>
                 <li><a class="text-white" href="">Blog</a></li>
                 <li><a class="text-white" href="">Contact Us</a></li>
               </ul>
@@ -459,12 +406,12 @@
           </div>
           <div class="col-12 col-md-3 text-white mb-5 ">
             <h4>Contact Now</h4>
-            <p>555 4th 5t NW, Washington <br>
-              DC 20530, United States</p>
+            <p>555 4th 5t NW, jamalpur<br>
+              DC 20530, Bangladesh</p>
             <p>+88 01750 000 000
               +88 01750 000 000</p>
-            <p>info@gmail.com
-              info@gmail.com</p>
+            <p>lanjudev16@gmail.com
+              lanjucse@gmail.com</p>
           </div>
           <div class="col-12 col-md-3 text-white mb-5 ">
             <h4>Subscribe</h4>
@@ -493,7 +440,7 @@
 
 
 
-  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src={{asset('assets/js/bootstrap.bundle.min.js')}}></script>
 </body>
 
 </html>

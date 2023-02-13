@@ -15,12 +15,25 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function Search(Request $request){
+       // dd($request->all());
+       $data=$request->search;
+       //dd($data);
+       $books=DB::table('books')->where('name',$data)->get();
+       return view('search',compact('books'));
+       //dd($book);
+
+    }
     public function index()
     {
         $books=DB::table('books')->get();
         return view('Book/index',compact('books'));
     }
 
+    public function homeIndex(){
+        $books=DB::table('books')->get();
+        return view('welcome',compact('books'));
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -17,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/extra', function () {
+    return view('extra');
 });
 
+Route::get('/',[BookController::class,'homeIndex'])->name('book');
 
 Route::get('/employee',[EmployeeController::class,'index'])->name('employee');
 
@@ -59,6 +60,7 @@ Route::get('/book',[BookController::class,'index'])->name('book');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/search', [BookController::class, 'Search'])->name('book.search');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
